@@ -1,0 +1,4 @@
+db/development.sqlite3
+.byebug_history
+tmp/cache/*
+tmp/pids/*
