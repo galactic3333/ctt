@@ -5,7 +5,7 @@ class InscriptionsController < ApplicationController
 
   def create
     @inscription = Inscription.new(inscription_params)
-    @inscription.kind = "Alumno"
+    @inscription.kind = 'Alumno'
     @inscription.user_id = current_user.id
     @inscription.save
     redirect_to root_path, alert: 'Registro al curso completo'

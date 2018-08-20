@@ -1,4 +1,4 @@
-<%= form_with(model: @inscription, url: inscription_registration_path, local: true) do |form| %>
+<%= form_with(model: @inscription, local: true) do |form| %>
   <% if @inscription.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@inscription.errors.count, "error") %> prohibited this inscription from being saved:</h2>

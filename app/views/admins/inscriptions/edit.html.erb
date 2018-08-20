@@ -1,0 +1,20 @@
+<%= form_with(model: @inscription, url: admins_inscription_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, value: @user.email, disabled: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.select :course_id, Course.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.select :kind, ['Alumno', 'Ayudante', 'Profesor'] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

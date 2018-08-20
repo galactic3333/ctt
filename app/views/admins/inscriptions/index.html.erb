@@ -1,0 +1,19 @@
+<h1>Inscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inscriptions.each do |inscription| %>
+      <tr>
+        <td><%= User.find(inscription.user_id).email %></td>
+        <td><%= Course.find(inscription.course_id).name %></td>
+        <td><%= link_to 'Edit', edit_admins_inscription_path(inscription) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

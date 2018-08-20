@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get 'inscriptions/new'
-  post 'inscriptions', to: 'inscriptions#create', as: 'inscription_registration'
+  resources :inscriptions, only: [:new, :create]
+  namespace :admins do
+    resources :users
+    resources :courses #, except: [:create]
+    #post 'courses', to: 'courses#create', as: 'course'
+    resources :inscriptions, only: [:index, :edit, :update]
+  end
   devise_for :users
   resources :courses
   root 'courses#index'
